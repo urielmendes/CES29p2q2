@@ -1,16 +1,15 @@
 package exe2;
-
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-public class VulnerableClassTest extends VulnerableClass {
+public class VulnerableClassTest  {
 
-	String FILENAME;
-	
-	@Test
-	public void invalidInputTest() {
-	
+	private String FILENAME;
+	private VulnerableClass vuln;
+	@Test(expected = Exception.class)
+	public void invalidFileNameTest() throws Exception {
+		FILENAME = "çaida";
+		vuln = new VulnerableClass();
+		vuln.vulnerableMethod(FILENAME);
 	}
 
 }
